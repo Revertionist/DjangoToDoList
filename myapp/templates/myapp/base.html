@@ -1,9 +1,15 @@
 <html>
-    <head>
-        <title>My Website</title>
-    </head>
-    <body>
-        <p>{{name}}</p>
 
-    </body>
+<head>
+    <title>{% block title %}My Site{% endblock %}</title>
+</head>
+
+<body>
+    <div if="content" , name+"content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+
 </html>
