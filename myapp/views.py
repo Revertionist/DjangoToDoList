@@ -9,3 +9,7 @@ def index (response, id):
 
 def home(response):
     return render(response, 'myapp/home.html', {})
+
+def test(response):
+    t = Item.objects.get(id=1)
+    return render(response, 'myapp/testpage.html',{"t":t})
