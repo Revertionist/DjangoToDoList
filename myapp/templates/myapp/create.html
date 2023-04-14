@@ -1,0 +1,11 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Create new list{% endblock %}
+
+{% block content %}
+<h2>Create page</h2>
+<form methods="post" action="/Create/">
+    {{form.as_p}}
+    <button type="submit", name="save">Add</button>
+</form>
+{% endblock %}
