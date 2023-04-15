@@ -4,7 +4,8 @@
 
 {% block content %}
 <h2>Create page</h2>
-<form methods="post" action="/Create/">
+<form methods="post" action="/create/">
+    {% csrf_token %}
     {{form.as_p}}
     <button type="submit", name="save">Add</button>
 </form>
