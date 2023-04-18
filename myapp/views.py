@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import ToDoList, Item
 from .forms import CreateNewList
-from django.urls import reverse
+# from django.urls import reverse
 # Create your views here.
 
 def index (response, id):
@@ -21,7 +21,7 @@ def create(response):
             t = ToDoList(name=n)
             t.save()
             
-        return HttpResponseRedirect(reverse(f"{t.id}") )
+        return HttpResponseRedirect("/%i" %t.id)
     
     else:
         form = CreateNewList()
