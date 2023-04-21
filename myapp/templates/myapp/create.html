@@ -4,9 +4,14 @@
 
 {% block content %}
 <h2>Create page</h2>
-<form method="post" action="/create/">
+<form method="post" action="/create/" class="form-group">
     {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit", name="save">Add</button>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <button type="submit" , name="save" , class="btn btn-success">Add</button>
+        </div>
+        {{form.name}}
+
+    </div>
 </form>
 {% endblock %}
