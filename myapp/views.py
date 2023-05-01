@@ -38,6 +38,7 @@ def create(response):
             n = form.cleaned_data["name"]
             t = ToDoList(name=n)
             t.save()
+            response.user.todolist.add(t)
             
         return HttpResponseRedirect("/%i" %t.id)
     
@@ -45,3 +46,6 @@ def create(response):
         form = CreateNewList()
         
     return render(response, 'myapp/create.html', {"form":form})
+
+def view(response):
+    return render(response, "myapp/view.html", {})
